@@ -2,7 +2,7 @@ const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 
 // change this to your mongodb atlas uri
-const url = 'mongodb+srv://jwoo:password12345@database-server-east-m89ol.mongodb.net/test?retryWrites=true';
+const url = 'mongodb+srv://aaron:testing123@cluster0-hlfen.mongodb.net/test?retryWrites=true';
 
 // Database Name
 const dbName = 'myproject';
@@ -30,7 +30,7 @@ function doStuffAfterConnected(err){
 
 const findSomething = function(db, callback) {
     // Get the documents collection
-    const collection = db.collection('???');
+    const collection = db.collection('products');
     // Find some documents
     collection.find({}).toArray(function(err, docs) {
       assert.equal(err, null);
@@ -39,9 +39,10 @@ const findSomething = function(db, callback) {
       callback(docs);
     });
   }
+
 const insertSomething = function(db, callback) {
     // Get the documents collection
-    const collection = db.collection('???');
+    const collection = db.collection('products');
     // Insert some documents
     collection.insertMany([
       {a : 1}, {a : 2}, {a : 3}
@@ -53,3 +54,4 @@ const insertSomething = function(db, callback) {
       callback(result);
     });
   }
+  
